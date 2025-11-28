@@ -1,104 +1,164 @@
 <!DOCTYPE html>
-<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
-body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Player</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        text-align: center;
+        
+        /* Background gambar sendiri */
+        background-image: url('https://cdn.aceimg.com/0160be0fb.png'); /* Ganti dengan gambar kamu */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.55); 
+        backdrop-filter: blur(10px);
+        z-index: -1;
+    }
+
+    /* Header */
+    .header {
+        width: 100%;
+        background: rgba(0,0,0,0.7);
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .header a {
+        text-decoration: none;
+        color: #ffd76b;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: 0.3s;
+        background: rgba(0,0,0,0.3);
+    }
+
+    .header a:hover {
+        background: #ffd76b;
+        color: #000;
+        transform: scale(1.05);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #ffd76b;
+        text-shadow: 0 0 10px rgba(255,215,107,0.6);
+    }
+
+    .video-wrapper {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 0 25px rgba(0,0,0,0.6);
+        background: rgba(255,255,255,0.06);
+        backdrop-filter: blur(6px);
+        padding: 12px;
+    }
+
+    video {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .btn-box {
+        margin-top: 25px;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        margin: 10px;
+        padding: 14px 28px;
+        background: #ffd76b;
+        color: #000000;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 0 15px rgba(229,9,20,0.7);
+        transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 25px rgba(229,9,20,0.9);
+    }
 </style>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auntie said this alone could have you folded… stay woke, bestie 😭🔥</title>
-    <link rel="icon" type="image/svg+xml" href="https://videy-viral-blackbaddies.github.io/Auntie-said-this-alone-could-have-you-folded-stay-woke-bestie-/favicon.svg">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #ffffff;
-            padding: 20px;
-        }
-        .video-title {
-            font-size: 1em;
-            font-weight: bold;
-            margin-bottom: 18px;
-            letter-spacing: 1px;
-            color: black;
-        }
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-        video {
-            width: 100%;
-            max-width: 100%;
-            border-radius: 10px;
-            display: block;
-        }
-        .ad-banner-inside {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 320px;
-            height: 50px;
-            background: rgba(255,255,255,0.92);
-            border-radius: 10px 10px 0 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-            overflow: hidden;
-        }
-        @media (max-width: 400px) {
-            .ad-banner-inside {
-                width: 95vw;
-                height: 40px;
-                font-size: 0.85em;
-            }
-        }
-    </style>
-<script type="text/javascript" async="" src="./Auntie said this alone could have you folded… stay woke, bestie 😭🔥_files/js15_as.js.download"></script></head>
+</head>
+
 <body>
-    <div class="video-title">Auntie said this alone could have you folded… stay woke, bestie 😭🔥<span aria-label="smile" role="img"></span></div>
-    <center><script type="text/javascript">
-	atOptions = {
-		'key' : '1f522d82c39ed94739a379ffba95606f',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="./Auntie said this alone could have you folded… stay woke, bestie 😭🔥_files/invoke.js.download"></script>
-	<br>
-    <div class="video-wrapper">
-        <video autoplay="" loop="" playsinline="" controls="" poster="https://cdn.aceimg.com/efc3a5eea.jpg">
-            <source src="https://cdn.slicedrive.com/jaoYsAv01.mp4" type="video/mp4">
-        </video><center><script type="text/javascript">
-	atOptions = {
-		'key' : '1f522d82c39ed94739a379ffba95606f',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="./Auntie said this alone could have you folded… stay woke, bestie 😭🔥_files/invoke.js.download"></script>
-		<div style="text-align: center; margin: 30px 0;">
-  <a href="https://alightmiraculous.com/g2cq3k9w1?key=3a0286218576009cb55386c6414785e6"
-     style="display: inline-flex; align-items: center; gap: 10px; background-color: #e50914; 
-     color: white; font-size: 20px; font-weight: bold; padding: 16px 28px; border-radius: 8px; 
-     text-decoration: none; box-shadow: 0 0 15px rgba(229,9,20,0.8); animation: blink 1.5s infinite;
-     margin: 10px 10px;">▶︎ Watch Full Videos
-  </a>
-  <a href="https://alightmiraculous.com/g2cq3k9w1?key=3a0286218576009cb55386c6414785e6"
-     style="display: inline-flex; align-items: center; gap: 10px; background-color: #e50914; 
-     color: white; font-size: 20px; font-weight: bold; padding: 16px 28px; border-radius: 8px; 
-     text-decoration: none; box-shadow: 0 0 15px rgba(229,9,20,0.8); animation: blink 1.5s infinite;
-     margin: 10px 10px;">▶︎ Watch More Videos
-  </a>
+
+<!-- HEADER -->
+<div class="header">
+    <a href="index.html">☰ Home</a>
 </div>
 
-<!-- Histats.com  START  (aync)-->
+<div class="container">
+    <!-- Banner Iklan-->
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'a39db8e2ff64c9c1ba5643baa6277b07',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//alightmiraculous.com/a39db8e2ff64c9c1ba5643baa6277b07/invoke.js"></script>
+    <!-- Banner Iklan-->
+
+    <div class="title">Sweet on the outside, irresistible on the inside. Auntie knows.</div>
+
+    <div class="video-wrapper">
+        <video controls poster="https://cdn.aceimg.com/efc3a5eea.jpg">
+            <source src="https://cdn.slicedrive.com/jaoYsAv01.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="btn-box">
+        <a href="https://alightmiraculous.com/g2cq3k9w1?key=3a0286218576009cb55386c6414785e6" class="cta-btn">▶︎ Full Videos</a>
+        <a href="https://alightmiraculous.com/g2cq3k9w1?key=3a0286218576009cb55386c6414785e6" class="cta-btn">▶︎ Watch More Videos</a>
+    </div>
+
+</div>
+
+<!-- Banner Iklan Bawah -->
+<script async="async" data-cfasync="false" src="//alightmiraculous.com/af07efbc01e8e2d85334e845d049a3fb/invoke.js"></script>
+<div id="container-af07efbc01e8e2d85334e845d049a3fb"></div>
+
+<!-- Histats.com START -->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4991623,4,0,0,0,00000000']);
 _Hasync.push(['Histats.fasi', '1']);
@@ -109,6 +169,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
 <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4991623&amp;101" alt="web page hit counter" border="0" /></a></noscript>
-<!-- Histats.com  END  -->
-   
-</center></div></center><script async="" type="text/javascript" src="./Auntie said this alone could have you folded… stay woke, bestie 😭🔥_files/0.php"></script></body></html>
+<!-- Histats.com END -->
+
+</body>
+</html>
